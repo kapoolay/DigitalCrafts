@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Creating folders now..."
+
+cd /Users/kev/digitalcrafts
+
+    mkdir -p projects/CLI101 mysite files
+
+        touch projects/CLI101/hello.txt mysite/index.html files/{question{1,2}.txt,question3.md,KevinCapule.info,remove-me-{1,2}.txt}
+
+            echo "Hello, world!" >> projects/CLI101/hello.txt
+
+            echo "<html></html>" >> mysite/index.html
+
+            echo "\"pwd\" is the command to print the working directory" >> files/question1.txt
+            echo "\"cd ..\" is the command to return to the parent directory" >> files/question2.txt
+
+            rm files/remove-me-{1,2}.txt
+
+            echo "Adding more detail to question 2" >> files/question2.txt
+
+echo "Folders created!"

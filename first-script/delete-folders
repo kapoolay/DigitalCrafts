@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Deleting folders now..."
+
+cd /Users/kev/digitalcrafts
+
+    rm -rf files mysite projects
+
+echo "Folders deleted!"
