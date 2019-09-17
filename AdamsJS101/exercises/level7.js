@@ -6,7 +6,7 @@
 
 function finalFunction(num) {
     let arr = [];
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) { // for (intializer; exit-condition; final expression) {}
         arr.push('string');
     }
     return arr;
