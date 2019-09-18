@@ -14,8 +14,9 @@ function lvl3exercise2 () {
 
 function lvl3exercise3 () {
   // Create a variable that equals 12 and convert it to a string with concatenation. Return it.
-  let num = 12;             // declares num as the variable 12
-  let str = '' + num;       // declares the str variable as concatenation of an emtpy string with the variable num
+  let num = 12;
+  let str = num + '';             // declares num as the variable 12
+  //let str = num.toString();       // another way of doing it without concatenation
   return str;               // returns '12'; it has now been converted into a string due to type coercion
 }
 
