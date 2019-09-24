@@ -18,3 +18,5 @@ hello('Kevin');
 function helloDefault(name = 'world') {
     return 'Hello, ' + name + '!';
 }
+
+helloDefault();

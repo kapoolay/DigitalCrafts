@@ -15,3 +15,5 @@ https://www.khanacademy.org/math/pre-algebra/factors-multiples/divisibility-and-
      }
      return 'The factors for ' + num + ' are: ' + arrFactors;
  }
+
+ console.log(factors(200));

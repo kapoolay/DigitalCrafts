@@ -21,6 +21,19 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 
+function isVowel(letter) {
+    let vowels = ['A','a','E','e','I','i','O','o','U','u'];
+    for (let i = 0; i < vowels.length; i++) {
+        if (letter[i] === vowels[i]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+console.log(isVowel('E'));
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
