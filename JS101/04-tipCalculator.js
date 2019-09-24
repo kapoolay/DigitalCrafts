@@ -24,6 +24,8 @@ bad -> 10%
      }
  }
 
+ console.log(tipAmount(10,'good'));
+
 
  /***************************************
  * Write a function totalAmount that takes the same arguments as tipAmount except it returns the total as the tip amount plus the bill amount. This function may make use of tipAmount as a sub-task.
@@ -35,6 +37,8 @@ bad -> 10%
  */
 
 function totalAmount(bill,service) {
+    return bill + tipAmount;
+    /*
     if (service === 'good') {
         tipAmount = bill * .20;                // declares tipAmount; 20% of the bill
         total = bill + tipAmount;              // declares total; addition of the bill and tipAmount
@@ -52,6 +56,7 @@ function totalAmount(bill,service) {
         total = bill + tipAmount;
         return 'The total bill is $' + total;
     }
+    */
 }
 
  /***************************************
@@ -66,6 +71,8 @@ Write a function splitAmount that takes the bill amount and the level of service
  */
 
  function splitAmount(bill,service,people) {
+    return totalAmount / people
+    /*
      if (service === 'good') {
          tipAmount = bill * .20;
          total = bill + tipAmount;
@@ -87,4 +94,7 @@ Write a function splitAmount that takes the bill amount and the level of service
         perPerson = total / people;
         return 'The total per person is $' + perPerson;
      }
+     */
  }
+
+ console.log(splitAmount(100,'good',5));
