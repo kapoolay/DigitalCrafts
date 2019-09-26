@@ -13,14 +13,14 @@
 
 function fizzbuzz() {
     for (let i = 1; i < 101; i++) {
-        if (i % 15 === 0) {
-            console.log('fizzbuzz');
-        } else if (i % 5 === 0) {
-            console.log('fizz');
-        } else if (i % 3 === 0) {
-            console.log('buzz');
+        if (i % 15 === 0) {             // if the value/15 = 0
+            console.log('fizzbuzz');    // print 'fizzbuzz'
+        } else if (i % 5 === 0) {       // if the value/5 = 0
+            console.log('fizz');        // print 'fizz'
+        } else if (i % 3 === 0) {       // if the value/3 = 0
+            console.log('buzz');        // print 'buzz'
         } else {
-            console.log(i);
+            console.log(i);             // otherwise just print the value
         }
     }
 }

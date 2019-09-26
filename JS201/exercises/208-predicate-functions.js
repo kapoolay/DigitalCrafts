@@ -22,17 +22,20 @@
 // isVowel({e: 'Elephant'}) --> false
 
 function isVowel(letter) {
-    let vowels = ['A','a','E','e','I','i','O','o','U','u'];
-    for (let i = 0; i < vowels.length; i++) {
-        if (letter[i] === vowels[i]) {
+    switch(letter.toUpperCase()) {      // if the parameter 'letter'(automatically switched to Uppercase)
+        case 'A':                       // is A, E, I, O, or U then return true
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
             return true;
-        } else {
-            return false;
-        }
+        default:
+            return false;               // otherwise return false
+
     }
 }
 
-console.log(isVowel('E'));
+//console.log(isVowel('i'));
 
 
 
@@ -50,7 +53,40 @@ console.log(isVowel('E'));
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+function isEven(num) {
+    if (num % 2 === 0) {
+        return true;
+    } else if (num % 2 !== 0) {
+        return false;
+    } else {
+        return 'Entry not valid'
+    }
+}
 
+/* Switch Statement
+function isEven(num) {
+    switch(num % 2) {
+        case 0:
+            return true;
+        default:
+            return false;
+    }
+}
+*/
+
+//console.log(isEven('34'));
+
+function isOdd(num) {
+    if (num % 2 !== 0) {
+        return true;
+    } else if (num % 2 === 0) {
+        return false;
+    } else {
+        return 'Entry invalid'
+    }
+}
+
+//console.log(isOdd('test'));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
@@ -66,3 +102,65 @@ console.log(isVowel('E'));
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+let usStates = {
+    'Alabama': 'Montgomery',
+    'Alaska': 'Juneau',
+    'Arizona': 'Phoenix',
+    'Arkansas': 'Little Rock',
+    'California': 'Sacramento',
+    'Colorado': 'Denver',
+    'Connecticut': 'Hartford',
+    'Delaware': 'Dover',
+    'Florida': 'Tallahassee',
+    'Georgia': 'Atlanta',
+    'Hawaii': 'Honolulu',
+    'Idaho': 'Boise',
+    'Illinois': 'Springfield',
+    'Indiana': 'Indianapolis',
+    'Iowa': 'Des Moines',
+    'Kansas': 'Topeka',
+    'Kentucky': 'Frankfort',
+    'Louisiana': 'Baton Rouge',
+    'Maine': 'Augusta',
+    'Maryland': 'Annapolis',
+    'Massachusetts': 'Boston',
+    'Michigan': 'Lansing',
+    'Minnesota': 'Saint Paul',
+    'Mississippi': 'Jackson',
+    'Missouri': 'Jefferson City',
+    'Montana': 'Helana',
+    'Nebraska': 'Lincoln',
+    'Nevada': 'Carson City',
+    'New Hampshire': 'Concord',
+    'New Jersey': 'Trenton',
+    'New Mexico': 'Santa Fe',
+    'New York': 'Albany',
+    'North Carolina': 'Raleigh',
+    'North Dakota': 'Bismarck',
+    'Ohio': 'Columbus',
+    'Oklahoma': 'Oklahoma City',
+    'Oregon': 'Salem',
+    'Pennsylvania': 'Harrisburg',
+    'Rhode Island': 'Providence',
+    'South Carolina': 'Columbia',
+    'South Dakota': 'Pierre',
+    'Tennessee': 'Nashville',
+    'Texas': 'Austin',
+    'Utah': 'Salt Lake City',
+    'Vermont': 'Montpelier',
+    'Virginia': 'Richmond',
+    'Washington': 'Olympia',
+    'West Virginia': 'Charleston',
+    'Wisconsin': 'Madison',
+    'Wyoming': 'Cheyenne'
+  }
+
+
+function isCapitalCity (state, city) {
+    if (!usStates[state]) return false          // if the parameter 'state' doesn't match the property value in the object, return false
+    if (usStates[state] === city) return true       // if the parameter 'state matches the property in the usStates object AND the parameter 'city' matches the value of the property, return true
+    else return false       //otherwise, return false
+  }
+
+console.log(isCapitalCity('Texas', 'Austin'));
