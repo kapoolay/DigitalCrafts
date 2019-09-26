@@ -37,7 +37,7 @@ bad -> 10%
  */
 
 function totalAmount(bill,service) {
-    return bill + tipAmount;
+    return bill + tipAmount(bill, service);
     /*
     if (service === 'good') {
         tipAmount = bill * .20;                // declares tipAmount; 20% of the bill
@@ -71,7 +71,7 @@ Write a function splitAmount that takes the bill amount and the level of service
  */
 
  function splitAmount(bill,service,people) {
-    return totalAmount / people
+    return totalAmount(bill, service) / people
     /*
      if (service === 'good') {
          tipAmount = bill * .20;

@@ -7,6 +7,7 @@ Write a function matrixAdd which is given two two-dimensional arrays, and return
 [ [ 6, 5 ], [ 3, 4 ] ]
 */
 
+/* ~~~~~~~~ Luis's Code
 function matrixAdd(matrixA, matrixB) {
     resultMatrix = [];
     let numRows = matrixA[0].length;
@@ -24,7 +25,7 @@ function matrixAdd(matrixA, matrixB) {
   }
   
   //console.log(matrixAdd([[1, 3], [2, 4]], [[5, 2], [1, 0]]));
-
+*/
 
 
 
@@ -48,7 +49,7 @@ https://www.khanacademy.org/math/precalculus/precalc-matrices/multiplying-matric
 [ [22,  8], [27, 10] ]
 */
 
-
+/* ~~~~~~~~~~~~~~ Luis's code
 function matrixMultiply(matrixA, matrixB) {
     var resultMatrix = [];
   
@@ -64,5 +65,5 @@ function matrixMultiply(matrixA, matrixB) {
     }
     return resultMatrix;
   }
-  
+  */
   //console.log(matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]]));

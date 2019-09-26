@@ -17,7 +17,7 @@ Write a function printNumbers which is given a start number and an end number. I
  */
 
  function printNumbers(start,end) {
-     for (let i = start; i < end; i++) {
+     for (let i = start; i <= end; i++) {
          console.log(i);
      }
  }

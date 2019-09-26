@@ -8,4 +8,15 @@ Modify your hello program such that if no name is given: hello(), it will print 
      console.log('Hello, ' + name + '!');
  }
 
+
+/*
+function hello2(name) {
+  if (name == undefined) {
+    console.log("Hello World");
+  } else {
+    console.log("Hello " + name);
+  }
+}
+*/
+
  hello();

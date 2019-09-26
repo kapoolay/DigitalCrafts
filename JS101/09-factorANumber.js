@@ -9,11 +9,11 @@ https://www.khanacademy.org/math/pre-algebra/factors-multiples/divisibility-and-
  function factors(num) {
      let arrFactors = [];
      for (let i = 0; i <= num; i++) {
-         if (num % i === 0) {
-             arrFactors.push(i);
+         if (num % i === 0) {       // if the remainder is 0, then the integer is a factor
+             arrFactors.push(i);    // pushes the value into the created array
          }
      }
      return 'The factors for ' + num + ' are: ' + arrFactors;
  }
 
- console.log(factors(200));
+ console.log(factors(9)); // prints 1, 3, and 9

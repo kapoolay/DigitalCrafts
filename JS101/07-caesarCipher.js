@@ -12,11 +12,11 @@ function cipher(str) {
     for (let i = 0; i < str.length; i++) {
         let asciNum = str[i].charCodeAt();      // .charCodeAt() looks at the ascii number for the string character
         if (asciNum >= 65 && asciNum <= 77 || asciNum >= 97 && asciNum <= 109) {        //string is A-M OR string is a-m
-        result += String.fromCharCode(asciNum + 13);                                    //add 13 to the string character's ascii number
+        result += String.fromCharCode(asciNum + 13);                                    //add 13 to the string character's ascii number; moving the characted 13 spaces to the left
         } else if (asciNum >= 78 && asciNum <= 90 || asciNum >= 110 && asciNum <= 122) {        //string is N-Z OR string is n-z
-            result += String.fromCharCode(asciNum -13);                                         //subtract 13 from the ascii number
+            result += String.fromCharCode(asciNum -13);                                         //subtract 13 from the ascii number; moving the character 13 spaces left
         } else {
-            result += str[i];
+            result += str[i];   // any character that's not a letter - space, puncutation marks, and other weird characters
         }
     }
     return result;
@@ -102,6 +102,7 @@ function decipher(str)  {
 
 
 /* ~~~~~~~~~~~ Luis's solution
+
 function decipher(someString, offset) {
     return cipherDecipher(someString, -offset);
   }
