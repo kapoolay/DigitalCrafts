@@ -8,6 +8,12 @@
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
 
+let alphaSort = ['b', 'a', 'c'];
+
+let sortABC = alphaSort.sort()
+
+console.log(sortABC);
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,6 +24,13 @@
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
 
+let strLengthSort = ['Apple', 'Bananas', 'Cherry'];
+
+let sortLength = strLengthSort.sort(function(a,b) {
+    return b.length - a.length;
+})
+
+console.log(sortLength);
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,3 +51,24 @@
 //   [4, 5]
 // ])
 // > [[2], [4, 5], [9, 1, 9]]
+
+var arr = [
+    [1, 3, 4],
+    [2, 4, 6, 8],
+    [3, 6]
+];
+
+console.log(arr.sort(function (a, b) {
+    let sum1 = 0;
+    let sum2 = 0;
+
+    a.forEach(function(element) {
+        sum1 += element;
+    });
+
+    b.forEach(function(element) {
+        sum2 += element;
+    });
+
+    return sum1 - sum2;
+}))

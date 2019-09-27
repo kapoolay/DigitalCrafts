@@ -16,7 +16,7 @@ var cities = [
     ];
 
 
-let coolCities = cities.filter(function(element) {
+let coolCities = cities.filter(function(element) {      // element can be called anything
     return element.temperature < 70.0
 })
 

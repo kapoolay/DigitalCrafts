@@ -53,6 +53,7 @@ function isVowel(letter) {
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 
+
 function isEven(num) {
     if (num % 2 === 0) {
         return true;
@@ -62,6 +63,7 @@ function isEven(num) {
         return 'Entry not valid'
     }
 }
+
 
 /* Switch Statement
 function isEven(num) {
@@ -74,8 +76,11 @@ function isEven(num) {
 }
 */
 
-//console.log(isEven('34'));
+console.log(isEven(34));
 
+
+
+/*
 function isOdd(num) {
     if (num % 2 !== 0) {
         return true;
@@ -85,8 +90,20 @@ function isOdd(num) {
         return 'Entry invalid'
     }
 }
+*/
 
-//console.log(isOdd('test'));
+// Switch Statement
+function isOdd(num) {
+    switch(num % 2) {
+        case 1:
+            return true;
+        default:
+            return false;
+    }
+
+}
+
+console.log(isOdd(7));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
@@ -163,4 +180,4 @@ function isCapitalCity (state, city) {
     else return false       //otherwise, return false
   }
 
-console.log(isCapitalCity('Texas', 'Austin'));
+//console.log(isCapitalCity('Texas', 'Austin'));

@@ -5,13 +5,45 @@
 // numberJoinerWhile(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
+function numberJoinerWhile(start, end) {
+    let numString = '';
+    while (start <= end) {      // continue to loop while the current value is less than the end value
+        if (start !== end) {        // if the current number is not the same as the end value
+            numString += start + '_';   // add the current with '_' afterwards
+            start++;        // increment the current value by 1 and re-loop
+        } else if (start === end) {     // if the starting value is the same as the ending value
+            numString += start;     // 
+            start++;
+        } else {
+            return numString + start;
+        }
+    }
+    return numString;
+}
+
+console.log(numberJoinerWhile(1, 10));
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
 
+function numberJoinerFor(start, end) {
+    let numString = '';
+    if (start !== end) {
+        for (let i = start; i < end; i++) {
+            numString += start + '_';
+            start++;
+        }
+        numString += end;
+        return numString;
+    }   else  {
+        return numString + start;
+    }
+}
 
+
+console.log(numberJoinerFor(1, 10));
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",

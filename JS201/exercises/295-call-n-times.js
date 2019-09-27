@@ -21,3 +21,15 @@
 //
 // In this example we assume there is a function "hello" already defined and
 // that it prints "Hello, world!" to the console.
+
+
+function callNtimes(number, func) {
+    while(number > 0) {
+        func();     
+        number--;   // decrementing prevents it from inifinity
+    }
+}
+
+callNtimes(3, function() {
+    console.log('Hello, World!');
+})

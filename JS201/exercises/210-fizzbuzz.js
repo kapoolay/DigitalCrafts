@@ -12,7 +12,7 @@
 
 
 function fizzbuzz() {
-    for (let i = 1; i < 101; i++) {
+    for (let i = 1; i <= 100; i++) {
         if (i % 15 === 0) {             // if the value/15 = 0
             console.log('fizzbuzz');    // print 'fizzbuzz'
         } else if (i % 5 === 0) {       // if the value/5 = 0
