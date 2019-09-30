@@ -19,3 +19,12 @@
 // factors(12) --> [1, 2, 3, 4, 6, 12]
 // factors(42) --> [1, 2, 3, 6, 7, 14, 21, 42]
 
+function factors(num) {
+    let arrFactors = [];
+    for (let i = 0; i <= num; i++) {
+        if (num % i === 0) {       // if the remainder is 0, then the integer is a factor
+            arrFactors.push(i);    // pushes the value into the created array
+        }
+    }
+    return 'The factors for ' + num + ' are: ' + arrFactors;
+}

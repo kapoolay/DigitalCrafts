@@ -17,3 +17,24 @@ https://www.khanacademy.org/math/pre-algebra/factors-multiples/divisibility-and-
  }
 
  console.log(factors(9)); // prints 1, 3, and 9
+
+ 
+
+
+
+
+
+
+
+
+ // ~~~~~~~~~~ Factorialize a number
+
+
+ function factorialize(num) {
+  if (num === 0) {      // used to break the loop created by using a recursive function
+    return 1;           // recursion refers to a function repeating(calling) itself
+  }
+  return num * factorialize(num - 1);   
+}
+
+console.log(factorialize(5));
