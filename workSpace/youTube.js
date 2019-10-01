@@ -161,8 +161,8 @@ function strOccur(str, char) {
 }
 
 
-let temp = 'This is a string.';
-console.log(strOccur(temp, 'i'));
+//let temp = 'This is a string.';
+//console.log(strOccur(temp, 'i'));
 
 /*
 const countChars = (str, char) =>
@@ -173,3 +173,150 @@ const contains2To4 = (str, char) =>
 
 console.log(contains2To4('ooh!', 'o'));
 */
+
+
+
+
+
+
+
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Write a program to reverse a string
+// Return a string in reverse
+// ex. reverseString('hello') === 'olleh'
+
+/* Steps
+1. Turn string into an array using .split()
+2. Reverse the array using .reverse()
+3. Turn array back into string using .join()
+*/
+
+/*
+function reverseString(str) {       // Longer version of the same function
+    let strArr = str.split('');
+    let strRev = strArr.reverse();
+    let result = strRev.join('');
+    return result;
+}
+*/
+
+function reverseString(str) {       // Shorter version of the same function
+    return str.split('').reverse().join('');
+}
+
+string = 'hello';
+
+//console.log(reverseString(string));
+
+
+
+
+
+
+
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/*
+Write a short program that prints each number from 1 to 100 on a new line. 
+
+For each multiple of 3, print "Fizz" instead of the number. 
+
+For each multiple of 5, print "Buzz" instead of the number. 
+
+For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
+*/
+
+function fizzBuzz() {
+    for (let i = 1; i < 101; i++) {
+        if (i % 15 === 0) {
+            console.log('FizzBuzz');
+        } else if (i % 5 === 0) {
+            console.log('Buzz')
+        } else if (i % 3 === 0) {
+            console.log('Fizz')
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+//fizzBuzz();
+
+
+
+
+
+
+
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CHALLENGE 2: VALIDATE A PALINDROME
+// Return true if palindrome and false if not
+// ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
+
+/*
+function isPalindrome(str) {
+    let revStr = str.split('').reverse().join('');
+    
+    if (revStr === str) {
+        return true;
+    } else {
+        return false;
+    }
+}
+*/
+
+
+function isPalindrome(str) {
+    let revStr = str.split('').reverse().join('');
+    
+    return revStr === str;
+}
+
+
+
+
+// console.log(isPalindrome('helleh'));
+
+
+
+
+
+
+
+
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// CHALLENGE 3: REVERSE AN INTEGER
+// Return an integer in reverse
+// ex. reverseInt(521) === 125
+
+// reverse the integer by first changing it into a string (.toString())
+// change the new string into an array (.split())
+// reverse the array (.reverse())
+// turn the array back into a string (.join())
+// change the reversed string back into an integer and return it
+
+function revInteger(int) {
+    let revStr = int.toString().split('').reverse().join('');
+
+    return parseInt(revStr);
+}
+
+int = 521
+
+console.log(revInteger(int));
+
+
+
+
+
+
