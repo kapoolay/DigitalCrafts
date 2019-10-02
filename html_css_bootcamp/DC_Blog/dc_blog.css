@@ -1,0 +1,30 @@
+* {
+    font-family: sans-serif;
+}
+
+.logo {
+    font-size: 35px;
+    display: inline-block;
+    float: left;
+}
+
+.links {
+    color: grey;
+    font-size: 25px;
+    display: inline-block;
+    float: right;
+}
+
+.links span {
+    margin: 20px;
+}
+
+main {
+    clear: both;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.date {
+    color: grey;
+}
