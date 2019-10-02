@@ -8,11 +8,14 @@
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
 
-let alphaSort = ['b', 'a', 'c'];
+function alphaSort(arr) {
+    return arr.split(',').sort();     // this method is incase the input is a string and not an array
+    
+}
 
-let sortABC = alphaSort.sort()
+sortABC= 'Kevin,Alvin,Zach,Alex';
 
-console.log(sortABC);
+console.log(alphaSort(sortABC));
 
 
 
@@ -23,7 +26,7 @@ console.log(sortABC);
 // Examples:
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
-
+/*
 let strLengthSort = ['Apple', 'Bananas', 'Cherry'];
 
 let sortLength = strLengthSort.sort(function(a,b) {
@@ -31,6 +34,7 @@ let sortLength = strLengthSort.sort(function(a,b) {
 })
 
 console.log(sortLength);
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,3 +76,5 @@ console.log(arr.sort(function (a, b) {
 
     return sum1 - sum2;
 }))
+
+*/
