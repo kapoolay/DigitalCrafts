@@ -26,10 +26,12 @@ body {
 }
 
 .links-top {
-    color: rgb(83, 82, 82);
-    font-size: 25px;
+    color: rgb(100, 100, 100);
+    font-size: 20px;
     display: inline-block;
     float: right;
+    margin-top: 10px;
+    margin-right: 30px;
 }
 
 .links-bottom {
@@ -41,8 +43,8 @@ body {
     margin-left: 100px;
 }
 
-.links-top span {
-    margin: 10px;
+.links-top span, .links-bottom span {
+    margin-right: 10px;
 }
 
 main {

@@ -13,14 +13,14 @@
     height: 600px;
     background: url("../img/atl.png") no-repeat;
     background-size: cover;
-    margin-right: 0px;
+    margin-right: 800px;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     color: rgb(158, 158, 158);
-    margin-left: 800px;
+    margin-left: 600px;
 }
 
 .name {
