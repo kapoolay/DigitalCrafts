@@ -1,0 +1,106 @@
+.nav {
+    background-color: #555;
+    color: whitesmoke;
+    position: fixed;
+    float: left;
+    width: 170px;
+    height: 93%;
+    font-family: sans-serif;
+    font-weight: 500;
+    padding: 30px 0 0 24px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav > span {
+    display: block;
+    margin-bottom: 20px;
+}
+.nav > form {
+    margin-bottom: 50px;
+}
+.nav > form > input {
+    background-color: #555;
+    color: white;
+    border: 2px solid grey;
+    padding: 3px; 
+}
+::placeholder {
+    color: #909090;
+}
+.nav > a {
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    color: #909090;
+}
+.nav > a:hover {
+    color: white;
+}
+.nav > .copyright {
+    text-align: center;
+    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+    color: #909090;
+}
+.main-body {
+    margin-left: 200px; 
+    padding: 17px 70px 0 20px;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    
+}
+.main-body-header > p {
+    font-size: 12px;
+}
+.main-body-header > span {
+    font-size: 37px;
+    font-weight: 300;
+    padding-left: 20px;
+}
+.main-body-container {
+    margin-top: 50px;
+}
+#introduction > span, #motivation > span, #campus-info > span {
+    font-weight: 600;
+    font-size: 12px;
+}
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    border-left: 7px solid #909090;
+    margin: 70px 0 70px 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    text-align: justify;
+    position: relative;
+    color: #999999;
+    background-color: #e6e3df;
+}
+
+blockquote:before {
+    float: left;
+    padding-left: 50px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+}
+blockquote:after {
+    position: absolute;
+    float:right;
+    font-size:80px;
+    line-height: 1;
+    right: 20px;
+    bottom:-20px;
+    content: "\201D";
+}
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+}
