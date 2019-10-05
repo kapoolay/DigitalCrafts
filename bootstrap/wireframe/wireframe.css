@@ -1,3 +1,21 @@
-.border {
-    border: 20px solid black;
+* {
+    color: white;
+    font-size: 20px;
+}
+
+.brd {
+    border: 5px solid rgb(102, 101, 101);
+    background-color: rgb(6, 173, 173);  
+    text-align: center;
+    width: 30px;
+    padding-top: 20px;
+}
+
+.row {
+    margin-top: 50px;
+}
+
+.row, .column {
+    height: 80px;
+    width: auto;
 }
