@@ -1,0 +1,36 @@
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    border: 2px solid black;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            HEADER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.header {
+    /* background-color: black;
+    color: gray; */
+}
+
+.container .header .title h1 {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.container .header .logo {
+    margin-top: 30px;
+    border: 1px solid black;
+}
+
+.container .header .menu {
+    margin-top: 30px;
+    border: 1px solid black;
+}
