@@ -37,13 +37,12 @@ img {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    margin: 0 100px;
+    margin: 0 50px;
 }
 
-/* .card-container img {
-    width: 200px;
-    height: 300px;
-} */
+.card-container img {
+    border-radius: 5%;
+} 
 
 .card-container .cozy {
     width: 200px;
