@@ -58,3 +58,9 @@ img {
     width: 200px;
     height: 250px;
 }
+
+.card-container .card .card-img {
+    width: 300px;
+    height: auto;
+    margin: 5px;
+}
