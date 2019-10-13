@@ -13,9 +13,9 @@ incrementButton.addEventListener('click', function(){
     
 });
 
-decrementButton.addEventListener('click', function() {
+decrementButton.addEventListener('click', function(){
 
     counter.innerHTML = count;
     count--;
-});
 
+});
