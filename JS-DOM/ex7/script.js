@@ -4,21 +4,24 @@
 
 
 
-window.addEventListener('load', function() {
-    let myButton = document.getElementById('section-header');
-    let count=0;
+// window.addEventListener('load', function() {
+//     let myButton = document.getElementById('section-header');
+//     let count=0;
 
-    myButton.addEventListener('click', function() {
-        document.getElementById('section').style.display='none'
-        count += 1;
-        if (count % 2) {
-            section.style.display='block';
-        } 
+//     myButton.addEventListener('click', function() {
+//         document.getElementById('section').style.display='none'
+//         count += 1;
+//         if (count % 2) {
+//             section.style.display='block';
+//         } 
+//     })
+// })
+
+
+window.addEventListener('load', function() {
+    var header = document.getElementById('section-header');
+    var section = document.getElementById('section');
+    header.addEventListener('click', function () {
+    section.style.display === 'none' ? section.style.display = 'block' : section.style.display = 'none';
     })
 })
-
-// window.addEventListener('load', function() {
-//     let displayingSection = true;
-
-
-// })
