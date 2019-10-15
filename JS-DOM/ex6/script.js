@@ -8,14 +8,12 @@ var count = 0; // This variable holds the current value of the counter!
 
 incrementButton.addEventListener('click', function(){
 
-    counter.innerHTML = count;
-    count++;
+    counter.innerHTML = ++count;
     
 });
 
 decrementButton.addEventListener('click', function(){
 
-    counter.innerHTML = count;
-    count--;
-
+    counter.innerHTML = --count;
+    
 });

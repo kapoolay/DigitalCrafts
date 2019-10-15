@@ -3,5 +3,5 @@
 var button = document.getElementById("myButton");
 
 button.addEventListener('click', function(){
-    document.getElementById('box').style.background = 'blue';
+    document.getElementById('box').style.background='blue';
 })
