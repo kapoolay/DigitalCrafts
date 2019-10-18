@@ -1,1 +1,21 @@
 /* Type whatever CSS you need here! */
+
+.tag {
+    border: 1px solid black;
+    width: 200px;
+    margin: 10px;
+}
+
+.bluetag {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 30px;
+    padding-top: 3px;
+}
+
+.name {
+    text-align: center;
+    height: 60px;
+    padding-top: 15px;
+}

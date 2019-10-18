@@ -1,10 +1,16 @@
 
 function renderStudents(students) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(students)}</code>
+    let student = '';
+
+    for (let i = 0; i < students.length; i++) {
+        student = `
+        <div class='studentBox'>
+            <div>${students.name}</div>
+            <p>${student.isPresent ? 'Present' : 'Absent'}</p>
         </div>
-    `
+        `
+    }
+    return student;
 }
 
 function students() {
