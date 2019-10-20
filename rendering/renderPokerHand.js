@@ -5,7 +5,7 @@ function buildPokerCardHTML (card) {
       `
     }
     function buildPokerHandHTML(pokerHand) {
-    const arrayOfCardsHTML = pokerHand.map(buildPokerCardHTML)
+    const arrayOfCardsHTML = pokerHand.map(buildPokerCardHTML) // map thru each card that is created from the pokerHand array
     const cardsHTML = arrayOfCardsHTML.join('')
     return `
           <div class="text-center mt-5">

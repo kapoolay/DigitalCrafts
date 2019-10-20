@@ -19,3 +19,40 @@
     height: 60px;
     padding-top: 15px;
 }
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MOVIE POSTER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* .movie-poster {
+    display: flex;
+    flex-direction: row; 
+    background-color: rgb(174, 174, 174);
+    border-radius: 20px;
+    margin: 40px 0;
+    padding: 30px;
+} */
+
+/* .movie-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding: 20px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 20px;
+    width: 60%;
+} */
+
+/* .title-year-info h1 {
+    font-weight: bold;
+}
+
+.imdb-info, .rotten-info {
+    margin-top: 40px;
+} */
+
+
+

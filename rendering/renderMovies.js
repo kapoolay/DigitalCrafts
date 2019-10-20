@@ -1,10 +1,31 @@
 
 function renderMovies(movies) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
-        </div>
-    `
+    let posterRender = '';
+
+    for (let i = 0; i < movies.length; i++) {
+        let rating = movies[i].rottenTomatoesRating * 100;
+
+        posterRender += `
+        <div style="display: flex;flex-direction:row;background-color: rgb(174, 174, 174);border-radius: 20px;margin: 40px 0;padding: 30px;">
+            <img class="poster" src = "${movies[i].poster}">
+            <div style="display: flex;flex-direction: column;margin-left: 50px;padding: 20px;background-color: rgb(222, 222, 222);border-radius: 20px;width: 60%;">
+                <div>
+                    <h1 style="font-weight: bold;">${movies[i].title}</h1>
+                    <h4>${movies[i].year}</h4>
+                </div>
+                <div style="margin-top: 40px;">
+                    <h2>IMDB:</h2>
+                    <h2>${movies[i].imdbRating} / 10</h2>
+                </div>
+                <div style="margin-top: 40px;">
+                    <h2>Rotten Tomatoes:</h2>
+                    <h2>${rating}%</h2>
+                </div>
+            </div>
+        </div
+        `
+    }
+    return posterRender;
 }
 
 function movies() {

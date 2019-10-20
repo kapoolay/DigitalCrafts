@@ -1,3 +1,5 @@
+function renderForm()
+
 function renderSurveys(surveys) {
     var surveysHTML = surveys.map(function(survey){
         return `
