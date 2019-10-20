@@ -1,11 +1,19 @@
-
 function renderSurveys(surveys) {
+    var surveysHTML = surveys.map(function(survey){
+        return `
+            <form style="border: 1px black solid" "class="mx-auto my-5 w-50">
+                <h1>${survey.title}</h1>
+                <hr/>
+                <button class="btn btn-primary" type="submit">${survey.submitButtonText}</button>
+            </form>
+            `
+    })
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(surveys)}</code>
+            <code>${surveysHTML.join('')}</code>
         </div>
     `
-}
+ }
 
 function surveys() {
     var content = document.getElementById('content');
