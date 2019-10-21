@@ -1,8 +1,8 @@
 
-function renderRectangle(rectangle) {
+function renderRectangle(arrayEl) {
     return `
         <div class="text-center mt-5">
-            <div style="width:${rectangle.width}px;height:${rectangle.height}px;background-color:${rectangle.color};"></div>
+            <div style="width:${arrayEl.width}px;height:${arrayEl.height}px;background-color:${arrayEl.color}"></div>
         </div>
     `
 }
