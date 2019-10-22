@@ -53,6 +53,10 @@ function students() {
             name: "Krissy",
             isPresent: false
         },
+        {
+            name: "Kev",
+            isPresent: true
+        },
     ]
 
     var contentEl = document.getElementById('content');
