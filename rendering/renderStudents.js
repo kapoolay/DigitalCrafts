@@ -1,20 +1,36 @@
-
 function renderStudents(students) {
-    let student = '';
-
+    let studentsHTML = `
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Roll Call!</h1>
+    </div>
+    `
     for (let i = 0; i < students.length; i++) {
-        student = `
-        <div class='studentBox'>
-            <div>${students.name}</div>
-            <p>${student.isPresent ? 'Present' : 'Absent'}</p>
-        </div>
-        `
+        if (students[i].isPresent) {
+            studentsHTML += `
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: lightgreen; border: 1px solid black;margin: 10px; width: 250px;text-align: center;">
+                    <h3>${students[i].name}</h3>
+                    <div>Present</div>
+                </div>
+            </div>
+            `
+        } else {
+            studentsHTML += `
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: orangered; border: 1px solid black;margin: 10px; width: 250px;text-align: center;">
+                    <h3>${students[i].name}</h3>
+                    <div>Absent</div>
+                </div>
+            </div>
+            `
+        }
     }
-    return student;
+
+
+    return studentsHTML;
 }
 
 function students() {
-    var content = document.getElementById('content');
 
     var studentsAbstraction = [
         {
@@ -36,8 +52,9 @@ function students() {
         {
             name: "Krissy",
             isPresent: false
-        }
+        },
     ]
 
-    content.innerHTML = renderStudents(studentsAbstraction);
+    var contentEl = document.getElementById('content');
+    contentEl.innerHTML = renderStudents(studentsAbstraction);
 }

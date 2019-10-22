@@ -1,19 +1,17 @@
-function renderCardHTML(card) {
-    let cardCode = card.value + card.suit;
-    return `
-        <img src="cards/${cardCode}.png" alt="Card ${cardCode}" style="width:130px; padding-top:10px;"/>
-    `
-}
-
-function renderPokerHand(array) {
-    let arrayOfCardsHTML = array.map(renderCardHTML);
-    cardsHTML = arrayOfCardsHTML.join('');
-    return `
-        <div class="text-center mt-5">
-            <code>${cardsHTML}</code>
-        </div>
-    `
-}
+function renderPokerHand(pokerHand) {
+    let cardHTML = pokerHand.map(function(card){
+        let cardCode = card.value + card.suit;
+        let cardImage = `
+        <img src="cards/${cardCode}.png" alt="Card ${cardCode}" style="width: 100px; padding-top: 10px;">
+        ` 
+        return cardImage;
+    
+    }).join('');
+    
+    return `<div class="poker">${cardHTML}</div>`;
+    
+    
+    }
 
 function pokerHand() {
     var pokerHandAbstraction = [
