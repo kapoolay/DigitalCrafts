@@ -1,14 +1,32 @@
 
 function renderTweets(tweets) {
-    return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+    let tweetHTML = '';
+
+    for (let i = 0; i < tweets.length; i++) {
+        tweetHTML = `
+        <div class = 'tweet-box'>
+            <img class='profile-pic' src="${tweets[i].user.profilePic}" style="width: 50px; height: 50px;"/>
+            <div class = 'twitter-top>
+                <div class='name'>
+                    <h4>${tweets[i].user.username}</h4>`
+                    
+                    `if (${tweets[i].user.isVerified}) {
+                        tweetHTML += '<img src="https://ubisafe.org/images/twitter-transparent-badge-3.png" style="width:10px; height:10px;">'
+                    }`
+
+                    renTweets +=  '</div>'
+                <h6>${tweets[i].user.handle}</h6>
+                </div>
+
+            </div>
         </div>
-    `
+        `
+    }
+
+    return tweetHTML;
 }
 
 function tweets() {
-    var content = document.getElementById('content');
 
     var tweetsAbstraction = [
         {
@@ -49,6 +67,7 @@ function tweets() {
         }
     ]
 
+    var content = document.getElementById('content');
     content.innerHTML = renderTweets(tweetsAbstraction);
 
 }

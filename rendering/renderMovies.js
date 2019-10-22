@@ -32,7 +32,6 @@ function renderMovies(movies) {
 }
 
 function movies() {
-    var content = document.getElementById('content');
 
     var moviesAbstraction = [
         {
@@ -61,6 +60,7 @@ function movies() {
         }
     ]
 
+    var content = document.getElementById('content');
     content.innerHTML = renderMovies(moviesAbstraction);
 
 }
