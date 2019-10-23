@@ -25,8 +25,6 @@ function renderStudents(students) {
             `
         }
     }
-
-
     return studentsHTML;
 }
 
@@ -52,10 +50,6 @@ function students() {
         {
             name: "Krissy",
             isPresent: false
-        },
-        {
-            name: "Kev",
-            isPresent: true
         },
     ]
 
