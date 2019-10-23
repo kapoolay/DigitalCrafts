@@ -1,29 +1,35 @@
-
 function renderTweets(tweets) {
-    let tweetHTML = '';
-
-    for (let i = 0; i < tweets.length; i++) {
-        tweetHTML = `
-        <div class = 'tweet-box'>
-            <img class='profile-pic' src="${tweets[i].user.profilePic}" style="width: 50px; height: 50px;"/>
-            <div class = 'twitter-top>
-                <div class='name'>
-                    <h4>${tweets[i].user.username}</h4>`
-                    
-                    `if (${tweets[i].user.isVerified}) {
-                        tweetHTML += '<img src="https://ubisafe.org/images/twitter-transparent-badge-3.png" style="width:10px; height:10px;">'
-                    }`
-
-                    renTweets +=  '</div>'
-                <h6>${tweets[i].user.handle}</h6>
+    var tweetsHTML = tweets.map(function(tweet){
+        return `
+            <div class="bg-white p-2 m-2 w-50">
+                <div class="d-flex align-items-center">
+                    <img width="50" src="${tweet.user.profilePic}" />
+                    <div class="mt-4 ml-2">
+                        <b>${tweet.user.username}</b>
+                        ${tweet.user.isVerified ? '<img width="15" src="twitterIcons/check-circle.svg" />' : ''}
+                        <p>${tweet.user.handle}</p>
+                        
+                    </div>
                 </div>
-
+                <h3>${tweet.text}</h3>
+                <hr />
+                <div class="d-flex text-secondary">
+                    <img style="opacity: 0.62" src="twitterIcons/message-circle.svg" />
+                    <b class="mr-3 ml-1">${tweet.replies}</b>
+                    <img style="opacity: 0.62" src="twitterIcons/repeat.svg" />
+                    <b class="mr-3 ml-1">${tweet.retweets}</b>
+                    <img style="opacity: 0.62" src="twitterIcons/heart.svg" />
+                    <b class="mr-3 ml-1">${tweet.likes}</b>
+                </div>
             </div>
-        </div>
         `
-    }
+    });
 
-    return tweetHTML;
+    return `
+        <div class="d-flex flex-column justify-content-start align-items-center mt-5">
+            ${tweetsHTML.join('')}
+        </div>
+    `
 }
 
 function tweets() {
