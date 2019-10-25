@@ -16,7 +16,7 @@ let computerWeapon ='';
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ~~~~~~~~~~~~~FUNCTIONS~~~~~~~~~~
+// ~~~~~~~~~MAIN FUNCTION~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function buttonClicked (event) {
