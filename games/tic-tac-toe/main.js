@@ -16,6 +16,8 @@ var ticTacToe = [
 
 let isPlayerXTurn = false;
 
+
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~~~~~FUNCTIONS~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,14 +74,8 @@ function getCurrentHTML(row, column) {
     return button.innerHTML;
 }
 
-// function playerTurn() {
-//     let id = document.getElementById('playerTurn');
-//     if (isPlayerXTurn) {
-//         id.innerHTML = "It's player X's turn!";
-//     } else {
-//         id.innerHTML = "It's player O's turn!";
-//     }
-// }
+
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~WINNING CONDITIONS~~~~~~
@@ -118,12 +114,14 @@ function winner () {
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ~~~~~~~~RESET~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~RESET GAME~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function reset () {
     document.location.reload();
 }
+
+
 
 
 

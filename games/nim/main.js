@@ -1,7 +1,21 @@
+
+var nim = 0;
+let playerNim = 0;
+
+function select () {
+    let pebbles = document.getElementById('takeInput');
+    let pickedPebble = pebbles.value;
+    playerNim = pickedPebble; 
+    nim + playerNim;
+    
+    
+
+
+    console.log(nim);
+}
+
+
 var content = document.getElementById('content');
-
-var nim = "Replace this with your own abstraction of Nim"
-
 content.innerHTML = renderGame(nim);
 
 
@@ -38,7 +52,7 @@ function renderGame(game) {
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
-                <button class="btn btn-primary">Take</button>
+                <button class="btn btn-primary" onClick="select()">Take</button>
             </div>
         </div>
     `
