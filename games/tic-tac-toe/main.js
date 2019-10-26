@@ -16,8 +16,6 @@ var ticTacToe = [
 
 let isPlayerXTurn = false;
 
-gameCount = 0;
-
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
