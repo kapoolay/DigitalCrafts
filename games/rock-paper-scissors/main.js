@@ -101,7 +101,7 @@ function winner(player, computer) {
 function gamesPlayed() {
     gameCount += 1;
 
-    document.getElementById('gameCount').innerHTML=`Games Player: ${gameCount}`;
+    document.getElementById('gameCount').innerHTML=`Games Played: ${gameCount}`;
 
     console.log(gameCount);
 }
