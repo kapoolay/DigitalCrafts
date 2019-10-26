@@ -1,25 +1,42 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~STATE~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-var nim = 0;
+let nim = 0;
 let playerNim = 0;
 
-function select () {
-    let pebbles = document.getElementById('takeInput');
-    let pickedPebble = pebbles.value;
-    playerNim = pickedPebble; 
-    nim + playerNim;
-    
-    
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~MAIN FUNCTION~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+function buttonClicked () {
+    let clickedButton = event.target;
+
+    valueHTML();
+
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~RENDER FUNCTIONS~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+function valueHTML () {
+    let input = document.getElementById('takeInput');
+    let value = parseInt(input.value);
+
+    nim += value;
 
     console.log(nim);
 }
 
 
+
 var content = document.getElementById('content');
 content.innerHTML = renderGame(nim);
-
-
-
 
 function renderGame(game) {
     // Change this render function to use the "game" parameter
@@ -52,7 +69,7 @@ function renderGame(game) {
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
-                <button class="btn btn-primary" onClick="select()">Take</button>
+                <button class="btn btn-primary" onClick="buttonClicked()">Take</button>
             </div>
         </div>
     `

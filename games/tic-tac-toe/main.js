@@ -19,7 +19,7 @@ let isPlayerXTurn = false;
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// ~~~~~~~~~~~~~FUNCTIONS~~~~~~~~~~
+// ~~~~~~~~~~~~MAIN FUNCTION~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 function buttonClicked(event) {
