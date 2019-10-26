@@ -1,0 +1,29 @@
+.text-center {
+    font-weight: bolder;
+}
+
+.btn {
+    background-color: purple;
+}
+
+#playersChoice {
+    border: 2px solid red;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    color: red;
+}
+
+#computerChoice {
+    border: 2px solid green;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    color: green;
+}
+
+#winner {
+    font-style: italic;
+}

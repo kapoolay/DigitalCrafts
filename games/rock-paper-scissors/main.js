@@ -14,6 +14,8 @@ let choices = ['rock', 'paper', 'scissors'];
 let playerWeapon = '';
 let computerWeapon ='';
 
+let gameCount = 0;
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // ~~~~~~~~~MAIN FUNCTION~~~~~~~~~~
@@ -27,8 +29,9 @@ function buttonClicked (event) {
     playerChoice();
     computerChoice();
     winner(playerWeapon, computerWeapon);
+    gamesPlayed();
 
-    console.log(clickedButtonId);
+    // console.log(clickedButtonId);
 
 }
 
@@ -45,7 +48,7 @@ function playerChoice () {
 
     document.getElementById('playersChoice').innerHTML=`You played: <strong>${clickedButtonId}</strong>`;
 
-    console.log("Player: " + playerWeapon);
+    // console.log("Player: " + playerWeapon);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +63,8 @@ function computerChoice () {
     computerWeapon = choices[Math.floor(Math.random() * choices.length)]
     
     document.getElementById('computerChoice').innerHTML=`The computer played: <strong>${computerWeapon}</strong>`;
-    console.log("Computer: " + computerWeapon);
+
+    // console.log("Computer: " + computerWeapon);
 }
 
 
@@ -85,11 +89,22 @@ function winner(player, computer) {
     }
 
     document.getElementById('winner').innerHTML=`${result}`;
-    console.log("Winner: " + result);
+
+    // console.log("Winner: " + result);
   }
 
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~Number of Games~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+function gamesPlayed() {
+    gameCount += 1;
+
+    document.getElementById('gameCount').innerHTML=`Games Player: ${gameCount}`;
+
+    console.log(gameCount);
+}
 
 
 
@@ -114,6 +129,7 @@ function renderGame(game) {
                 <div class="m-5" id="computerChoice">The computer played: <b>${rockPaperScissors.computer}</b></div>
             </div>
             <h1 class="text-center" id="winner">${rockPaperScissors.winner}</h1>
+            <h5 class="text-center" id="gameCount"></h5>
         </div>
     `
 }

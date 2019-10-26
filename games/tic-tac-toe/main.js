@@ -16,6 +16,8 @@ var ticTacToe = [
 
 let isPlayerXTurn = false;
 
+gameCount = 0;
+
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -109,7 +111,7 @@ function winner () {
         ticTacToe[0][0]+ticTacToe[1][1]+ticTacToe[2][2] === 'OOO' ||
         ticTacToe[0][2]+ticTacToe[1][1]+ticTacToe[2][0] === 'OOO' ) {
             document.getElementById('winner').innerHTML ='Player O Wins!';
-    } 
+    }
 }
 
 
@@ -124,6 +126,10 @@ function reset () {
 
 
 
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~HTML~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var content = document.getElementById('content');
 content.innerHTML = renderGame(ticTacToe);
@@ -151,6 +157,7 @@ function renderGame(game) {
             </div>
             <h4 id='winner'></h4>
             <button onClick='reset()' style="width:100px;">Reset</button>
+            <h3 id="gameCount"></h3>
         </div>
     `
 }
