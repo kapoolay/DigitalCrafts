@@ -2,6 +2,26 @@
     margin-top: 100px;
 }
 
-#actions {
-    padding-left: 40px;
+.drop-down {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px 0;
+    /* border: 2px solid black; */
+    width: 155px;;
+    height: 65px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#content {
+    padding-left: 10px;
+}
+
+#typeHTML {
+    text-decoration: underline;
 }
