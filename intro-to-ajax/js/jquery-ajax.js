@@ -93,9 +93,7 @@
   //
   //    For example, if you used $.getJSON() above, try out $.ajax() for this exercise.
   //
-  //    Hint: check out the $.ready() method https://api.jquery.com/ready/
-
-  
+  //    Hint: check out the $.ready() method https://api.jquery.com/ready/  
   //
   // 3) Confirm that this AJAX request shows up in the Network tab everytime you reload the page
   //
@@ -129,7 +127,7 @@
       })
     })
   }
-  
+
   $("#massiveDoggos").on("change", getSoloDoggos);
   function getSoloDoggos(){
     $.get(`https://dog.ceo/api/breed/${this.value}/images/random`, grabDoggo);
