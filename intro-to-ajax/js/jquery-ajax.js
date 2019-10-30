@@ -70,6 +70,17 @@
   //    get a new dog, click the button, get a new dog, etc.
   //
 
+
+  $('#generateDoggoBtn').click(getDoggo);
+
+  function getDoggo() {
+    $.getJSON('https://dog.ceo/api/breeds/image/random', function(response) {
+      $('#generateDoggoBtn').html('Generating Doggo...').prop('disabled',true);                   // changes the button text to 'Generating Doggo...' once the button is clicked
+      setTimeout(function() {
+        $('#doggoContainer').html(`<img src='${response.message}' style='max-width:500px;max-height:500px;'>`);   // adds images
+        $('#generateDoggoBtn').html('Generate Doggo').prop('disabled',false)},500)                // changes the button text back to 'Generate Doggo' once the button is clicked
+    })
+  }
   // TODO: your code goes here :)
 
   //
@@ -83,6 +94,8 @@
   //    For example, if you used $.getJSON() above, try out $.ajax() for this exercise.
   //
   //    Hint: check out the $.ready() method https://api.jquery.com/ready/
+
+  
   //
   // 3) Confirm that this AJAX request shows up in the Network tab everytime you reload the page
   //
@@ -105,6 +118,28 @@
   //
   //    You should now be able to view random pictures of specific dog breeds via the menu!
   //
+
+  $("#selectBreedContainer").html("<select id='massiveDoggos'></select>");
+  function getMoreDoggos(){
+    $.get("https://dog.ceo/api/breeds/list", function(response){
+      var listODoggos = response.message;
+      listODoggos.map(function(dog){
+        console.log(dog);
+        $("#massiveDoggos").append(`<option value="${dog}">${dog}</option>`);
+      })
+    })
+  }
+  
+  $("#massiveDoggos").on("change", getSoloDoggos);
+  function getSoloDoggos(){
+    $.get(`https://dog.ceo/api/breed/${this.value}/images/random`, grabDoggo);
+    function grabDoggo(response){
+      var doggo = response.message;
+      console.log(doggo);
+      $("#doggoContainer").html(`<img src='${response.message}' width='400px'>`);
+    }
+  }
+  getMoreDoggos();
 
   // TODO: your code goes here :)
 
