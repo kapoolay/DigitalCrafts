@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-body">
                         <h5 class="card-title">${currentMovie.Title} <span class="badge badge-secondary">${currentMovie.Year}</span></h5>
                         <p class="card-text">IMDB ID: ${currentMovie.imdbID}</p>
-                        <a href="#" class="btn btn-primary">ADD!</a>
+                        <a href="#" class="btn btn-primary" onClick='saveToWatchlist("${currentMovie.imdbID}")'>ADD!</a>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,36 @@ document.addEventListener('DOMContentLoaded', function() {
       return movieHTML.join('');
     }
 
-    let content = document.getElementById('movies-container');
-    // content.innerHTML = renderMovies(movieData);ddd
+
+    //Form Submit Listener - search button for the movies
+    document.getElementById('search-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let content = document.getElementById('movies-container')
+        content.innerHTML = renderMovies(movieData);
+    });
+
+
+    // let content = document.getElementById('movies-container');
+    // content.innerHTML = renderMovies(movieData);
 
   });
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  SAVE TO WATCH LIST FUNCTION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+function saveToWatchlist(imdbID) {
+    let movie = movieData.find(function(currentMovie) {
+        return currentMovie.imdbID == imdbID;
+    });
+    let watchlistJSON = localStorage.getItem('watchlist');
+    let watchlist = JSON.parse(watchlistJSON);
+
+    if (watchlist === null) {
+        watchlist = [];
+    };
+    watchlist.push(movie);
+    watchlistJSON = JSON.stringify(watchlist);
+    localStorage.setItem('watchlist', watchlistJSON);
+};
