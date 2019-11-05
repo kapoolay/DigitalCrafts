@@ -23,10 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     //Form Submit Listener - search button for the movies
+    // NEEDS WORK!!!
     document.getElementById('search-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        let content = document.getElementById('movies-container')
-        content.innerHTML = renderMovies(movieData);
+
+        let searchString = document.getElementById('search-bar');
+        let urlEncodedSearchString = encodeURIComponent(searchString);
+
+        axios.get("http://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString)
+            .then(function(response) {
+                console.log(response);
+                let content = document.getElementById('movies-container')
+                content.innerHTML = renderMovies(response.data.Search);
+        })
+
+
+        
     });
 
 
