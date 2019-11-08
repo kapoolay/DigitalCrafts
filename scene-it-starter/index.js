@@ -1,11 +1,17 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            STATE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+var movieData = [];
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~
     RENDER FUNCTION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     function renderMovies(movieArray) {
-      var movieHTML = movieArray.map(function (currentMovie){
-        return `
+        var movieHTML = movieArray.map(function (currentMovie) {
+            return `
             <div class="movie">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="${currentMovie.Poster}" alt="Card image cap" style="width:auto; height: 450px;">
@@ -17,51 +23,51 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             `;
-      });
-      return movieHTML.join('');
-    }
+    });
+
+        return movieHTML.join("");
+
+    };
 
 
     //Form Submit Listener - search button for the movies
-    // NEEDS WORK!!!
-    document.getElementById('search-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+    document.getElementById("search-form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-        let searchString = document.getElementById('search-bar').value;
-        let urlEncodedSearchString = encodeURIComponent(searchString);
+        var searchString = document.getElementsByClassName("form-control search-bar")[0].value;
+        var urlEncodedSearchString = encodeURIComponent(searchString);
+         
+        axios.get("https://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString).then(function (response) {
+            var content = document.getElementById("movies-container");
+            movieData = response.data.Search;
+            content.innerHTML = renderMovies(movieData);
 
-        axios.get("http://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString).then(function(response) {
-                console.log(response);
-                console.log(response.data.Search);
-                let content = document.getElementById('movies-container')
-                content.innerHTML = renderMovies(response.data.Search);
+            console.log(response.data);
         });
-        
     });
 
-
-    // let content = document.getElementById('movies-container');
-    // content.innerHTML = renderMovies(movieData);
-
-  });
-
+});
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   SAVE TO WATCH LIST FUNCTION
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-function saveToWatchlist(imdbID) {
-    let movie = movieData.find(function(currentMovie) {
-        return currentMovie.imdbID == imdbID;
-    });
-    let watchlistJSON = localStorage.getItem('watchlist');
-    let watchlist = JSON.parse(watchlistJSON);      // .parse() --> string to JSON
 
-    if (watchlist === null) {
-        watchlist = [];
-    };
+function saveToWatchlist(imdbID) {
+    var movie = movieData.find(function (currentMovie) { //first item returned to meet test
+        return currentMovie.imdbID == imdbID;
+    })
+    var watchlistJSON = localStorage.getItem("watchlist"); 
+    var watchlist = JSON.parse(watchlistJSON); //convert string to JSON object
+
+    if (watchlist === null) { //if true didnt exist
+        watchlist = []; //the create new empty array
+    }
+
     watchlist.push(movie);
-    console.log(movieData);
-    watchlistJSON = JSON.stringify(watchlist);      // .stringify() --> JSON to string
-    localStorage.setItem('watchlist', watchlistJSON);
+
+    watchlistJSON = JSON.stringify(watchlist); //make it string
+    localStorage.setItem("watchlist", watchlistJSON); //store as string
+
+    console.log(watchlist);
 };
