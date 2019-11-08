@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="card-body">
                         <h5 class="card-title">${currentMovie.Title} <span class="badge badge-secondary">${currentMovie.Year}</span></h5>
                         <p class="card-text">IMDB ID: ${currentMovie.imdbID}</p>
-                        <a href="#" class="btn btn-primary" onClick='saveToWatchlist("${currentMovie.imdbID}")'>ADD!</a>
+                        <a href="#" class="btn btn-primary" onClick='removeFromWatchlist("${currentMovie.imdbID}")'>Watched!</a>
                     </div>
                 </div>
             </div>
@@ -25,3 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let content = document.getElementById("movies-container");
     content.innerHTML = renderMovies(watchlist);
 });
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  REMOVE WATCH LIST FUNCTION
+        NEEDS WORK!!!!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+function removeFromWatchlist(imdbID) {
+    let watchListJSON = localStorage.getItem("watchlist");
+    let watchlist = JSON.parse(watchListJSON);
+    console.log('button works') 
+    console.log(watchlist);
+    watchlist.pop();
+};

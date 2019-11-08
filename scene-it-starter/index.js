@@ -71,3 +71,4 @@ function saveToWatchlist(imdbID) {
 
     console.log(watchlist);
 };
+
