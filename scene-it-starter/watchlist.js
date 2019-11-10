@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     content.innerHTML = renderMovies(watchlist);
 });
 
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   REMOVE WATCH LIST FUNCTION
         NEEDS WORK!!!!
