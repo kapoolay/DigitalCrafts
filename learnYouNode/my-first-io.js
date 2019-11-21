@@ -1,4 +1,4 @@
-let fs = require('fs');
+let fs = require('fs');      // accessing the filesystem module and assigning it to a variable
 
 let arg = process.argv;
 // .readFileSync() is a method to read contents of a file 
