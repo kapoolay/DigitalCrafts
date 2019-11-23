@@ -1,0 +1,18 @@
+  {
+  "name": "expressserver",
+  "version": "1.0.0",
+  "description": "creating express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "express"
+  ],
+  "author": "KAC",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

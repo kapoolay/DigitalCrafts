@@ -1,3 +1,5 @@
+// Random Cat Facts to PDF Document
+
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const catFacts = require('cat-facts');
