@@ -7,7 +7,7 @@ const serverApp = express();
 serverApp.use(express.static(__dirname + '/public'));       // "__dirname" is the direct path name of the serverapp location
 
 serverApp.get('/myapi/hello', function(request, response, next) {
-    response.send('Helloooooooooo');
+    response.send('Hello. This is a test!');
 });
 
 serverApp.listen(3000, function() {
