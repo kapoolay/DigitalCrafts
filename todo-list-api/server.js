@@ -13,8 +13,15 @@ var todoList = [
 ];
 
 // GET /api/todos
+app.get('/api/todos', function(req, res, next) {
+    console.log(todoList);
+    res.send(todoList);
+});
 
 // GET /api/todos/:id
+app.get('/api/todos/:id', function(req, res, next) {
+    res.send(todoList[req.params.id])
+})
 
 // POST /api/todos
 
