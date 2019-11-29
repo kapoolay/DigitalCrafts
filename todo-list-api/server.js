@@ -24,6 +24,10 @@ app.get('/api/todos/:id', function(req, res, next) {
 })
 
 // POST /api/todos
+app.post('/api/todos', function(req, res, next) {
+    res.send('Post is working');
+    console.log('trying to post');
+});
 
 // PUT /api/todos/:id
 
