@@ -30,8 +30,14 @@ app.post('/api/todos', function(req, res, next) {
 });
 
 // PUT /api/todos/:id
+app.put('/api/todos/:id', function(req, res, next) {
+
+})
 
 // DELETE /api/todos/:id
+app.delete('/api/todos/:id', function(req, res, next) {
+    
+})
 
 app.listen(3000, function(){
     console.log('Todo List API is now listening on port 3000...');
