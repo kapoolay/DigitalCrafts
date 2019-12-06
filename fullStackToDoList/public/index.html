@@ -1,26 +1,22 @@
 <html>
-<head>
-  <title>Full Stack To-Do-List</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
-<body>
-  <div>
-    <h1>Full Stack To-Do-List</h1>
-  </div>
+  <head>
+    <title>Todo List App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>Todo List App:</h1>
+    <div>
+      <h2>Add Todo Item Here:</h2>
+      <div>
+          <textarea id="new_todo" rows="4" cols="50"></textarea>
+          <button id="addTodo"> Add Todo Item </button>
+      </div>
 
-  <div>
-    <form>
-      <input type='text'>
-    </form>
-  </div>
-  <div>
-    <h3>To-Dos</h3>
-    <ul>
-      <li></li>
-    </ul>
-  </div>
+      <h3>My Todo Items:</h3>
+      <div id="todo_items_list">
 
-  <script src="index.js"></script>
-</body>
-
+      </div>
+    </div>
+  </body>
 </html>
