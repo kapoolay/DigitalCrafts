@@ -11,7 +11,7 @@ $(document).ready(function(){
   function renderTodo(data) {
     let html = '<ol>';
     data.forEach(element => {
-      html += `<li>${element.todo}</li>`;
+      html += `<li>${element.todo}</li><button id='deleteToDo'>Delete</button>`;
     });
     html += '</ol>';
     return html;
@@ -33,4 +33,8 @@ $(document).ready(function(){
     $('#new_todo').val('');
     
   });
+
+  $('#deleteToDo').click(function() {
+    console.log('deleting');
+  })
 });
