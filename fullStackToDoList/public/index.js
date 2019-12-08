@@ -11,7 +11,7 @@ $(document).ready(function(){
   function renderTodo(data) {
     let html = '<ol>';
     data.forEach(element => {
-      html += `<li>${element.todo}</li><button id='deleteToDo'>Delete</button>`;
+      html += `<li>${element.todo}<button class='delete-todo' ${element.id}>Delete</button></li>`;
     });
     html += '</ol>';
     return html;
