@@ -1,22 +1,41 @@
-<html>
-  <head>
-    <title>Todo List App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <h1>Todo List App:</h1>
-    <div>
-      <h2>Add Todo Item Here:</h2>
-      <div>
-          <textarea id="new_todo" rows="4" cols="50"></textarea>
-          <button id="addTodo"> Add Todo Item </button>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
 
-      <h3>My Todo Items:</h3>
-      <div id="todo_items_list">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+    <title>Document</title>
 
-      </div>
+</head>
+
+<body>
+<div id='content'>
+    <h1>TodoList</h1>
+    <div id="admin-div">
+        <button id="admin">Admin Only! Shows all userID and Todo list</button>
+        <code id="admin-results"></code>
     </div>
-    <script src="index.js"></script>
-  </body>
+    <div id='make-todo'>
+            <h1>Make todo List</h1>
+            <form>
+                <input id="todo-make" type="text"  placeholder="What to do?">
+                <button id="add-button">Add to list</button>
+                <button id="send-data">SEND TO DATABASE!</button>
+            </form>
+    </div>
+    <div id="userid-div">
+        <h1>GET YOUR TODO LIST!</h1>
+        <form>
+            <input id="id-user" type="text"  placeholder="what is your userID">
+            <button id="button-user">Get your todoList</button>
+        </form>
+        <div id="userid-results"></div>
+    </div>
+</div>
+    <script src="scripts/index.js"></script>
+</body>
+
 </html>

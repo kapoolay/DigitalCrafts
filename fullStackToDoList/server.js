@@ -1,91 +1,145 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+var express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs')
 
 const app = express();
-
-app.use(express.static(__dirname + '/public'));
-
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
-let counter = 1;
-let todoList = [
-  {
-    id: 1,
-    todo: "Implement a REST API"
-  }
-];
+app.use(express.static(__dirname + '/public'))
+
+
+
+
+const getDataFile = (file) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile('data.json', (err, data) => {
+            if (err) reject(err)
+
+            data = JSON.parse(data.toString())
+            resolve(data)
+        })
+    })
+}
+
+
 
 // GET /api/todos
-app.get("/api/todos", function (request, response, next) {
-  response.json(todoList);
-});
+app.get('/api/todos', (req, res, nextFn) => {
+    console.log('Someone called the GET /api/todos')
+    getDataFile('data.json')
+        .then((data) => {
+            console.log(data.todoList)
+            res.json(data.todoList)
+        })
+})
+
+
+
+
+
 
 // GET /api/todos/:id
-app.get("/api/todos/:id", function (request, response, next) {
-  let todoItem = todoList.find(function (element) {
-    return element.id.toString() === request.params.id;
-  });
+app.get('/api/todos/:id', (req, res, nextFn) => {
+    let id = req.params.id
 
-  response.json(todoItem);
-});
+    getDataFile('data.json')
+        .then((data) => {
+            console.log(data.todoList.userId[id])
+            if (data.todoList.userId[id]) {
+                res.json(data.todoList.userId[id])
+            }
+        })
+        .catch((e) => {
+            console.log(e)
+            res.status(404)
+
+        })
+
+})
+
+
+
+
 
 // POST /api/todos
-app.post("/api/todos", function (request, response, next) {
-  counter++;
+app.post('/api/todos', (req, res, nextFn) => {
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('This should be req.body', req.body)
+    getDataFile('data.json')
+        .then((data) => {
+            let ifNum = true
+            let id = 1
+            while (ifNum) {
+                if (data.todoList.userId[id])
+                    id++
+                else
+                    ifNum = false
+            }
 
-  let todoItem = request.body;
-  /*
-  todoIteem = {
-    key1: value1,
-    key2: value2,
-    key3: value3,
-    key4: value4
-  }
-  */
-  todoItem = { id: counter, ...todoItem }; // note we are using the spread operator (...)
+            let todoList = data.todoList.userId
+            todoList[id] = {"todo": req.body}
+            jsonData = JSON.stringify(data)
+            console.log('This is life', jsonData)
+            fs.writeFile('data.json', jsonData, (err) => {
+                if (err) throw err
+                res.send({
+                    succes: 'true'
+                })
+            })
 
-  todoList.push(todoItem);
 
-  response.json(todoItem);
-});
+        })
+
+
+})
 
 // PUT /api/todos/:id
-app.put("/api/todos/:id", function (request, response, next) {
-  let todoItem = todoList.find(function (element) {
-    return element.id.toString() === request.params.id;
-  });
+app.put('/api/todos/:id', (req, res, nextFn) => {
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~')
 
-  //   let newPropertyEntries = Object.entries(request.body)[0]; // just the first key/value pair
-  //   todoItem[newPropertyEntries[0]] = newPropertyEntries[1];
+    let id = req.params.id
+    getDataFile('data.json')
+        .then((data) => {
+            if (data.todoList.userId[id])
+                data.todoList.userId[id] = req.body
 
-  if (typeof todoItem == 'undefined') {
-    response.json('you F up');
-  }
-  
-  var newTodoData = request.body;
-  var newTodoKeys = Object.keys(newTodoData); // ["todo", "todo2"]
-
-  newTodoKeys.forEach(function (key) {
-    todoItem[key] = newTodoData[key];
-  });
-
-  response.json(todoItem);
-});
+            return data
+        })
+        .then((data) => {
+            jsonData = JSON.stringify(data)
+            fs.writeFile('data.json', jsonData, (err) => {
+                if (err) throw err
+                res.send({
+                    succes: 'true'
+                })
+            })
+        })
+})
 
 // DELETE /api/todos/:id
-app.delete("/api/todos/:id", function (request, response, next) {
-  let indexToRemove = todoList.findIndex(function (todoItem) {
-    return todoItem.id.toString() === request.params.id;
-  });
+app.delete('/api/todos/:id', (req, res, nextFn) => {
 
-  if (indexToRemove >= 0) {
-    todoList.splice(indexToRemove, 1);
-  }
+    getDataFile('data.json')
+        .then((data) => {
+            delete data.todoList.userId[req.params.id]
+            return data
+        })
+        .then((data) => {
+            jsonData = JSON.stringify(data)
+            fs.writeFile('data.json', jsonData, (err) => {
+                if (err) throw err
+                res.send({
+                    delete: 'true'
+                })
+            })
+        })
+})
 
-  response.sendStatus(200);
-});
 
-app.listen(3000, function () {
-  console.log("Todo List API is now listening on port 3000...");
-});
+
+app.listen(3000, () => {
+    console.log('server is listening...')
+})
