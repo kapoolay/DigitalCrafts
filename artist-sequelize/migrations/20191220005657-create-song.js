@@ -1,20 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('albums', {
+    return queryInterface.createTable('songs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      album_name: {
+      name: {
         type: Sequelize.STRING
       },
-      year: {
+      duration: {
         type: Sequelize.INTEGER
       },
-      artist_id: {
+      album_id: {
+        type: Sequelize.INTEGER
+      },
+      year: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -25,9 +28,20 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+    }).then(function (){
+      queryInterface.addConstraint('songs', ['album_id'], {
+        type: 'FOREIGN KEY',
+        name: 'song_album_fk',
+        references: {
+          table: 'albums',
+          field: 'id'
+        },
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
+      });
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('albums');
+    return queryInterface.dropTable('songs');
   }
 };

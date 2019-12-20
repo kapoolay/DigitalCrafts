@@ -18,7 +18,7 @@ readline.question(`Album name?`, (name) => {
       console.log(`Artist ID is: ${artist_id}`);
       new_album['artist_id'] = artist_id;
 
-      models.albums.create({ album_name: new_album['name'], year: new_album['year'], artist_id: new_album['artist_id'] })
+      models.album.create({ name: new_album['name'], year: new_album['year'], artist_id: new_album['artist_id'] })
         .then(function (album) {
           console.log(album);
         });
