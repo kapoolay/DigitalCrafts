@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": null,
+    "database": "passport-seq",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
