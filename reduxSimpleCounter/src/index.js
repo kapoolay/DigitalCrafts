@@ -24,6 +24,7 @@ add5Button.addEventListener('click', e => dispatch({ type: "add5" }));
 
 // Dispatch the "subtract5" action every time the -5 button is pressed
 const subtract5Button = document.getElementById('subtract5');
+
 subtract5Button.addEventListener('click', e => dispatch({ type: "subtract5" }));
 
 
@@ -31,3 +32,10 @@ subtract5Button.addEventListener('click', e => dispatch({ type: "subtract5" }));
 const colorsDropdown = document.getElementById('colors');
 
 colorsDropdown.addEventListener('change', e => dispatch({ type: "colors"}));
+
+
+// Dispatch counter value to be the same as input of text area
+const changeValue = document.getElementById('counterValue');
+
+var textValue = document.getElementById("textArea").value;
+
