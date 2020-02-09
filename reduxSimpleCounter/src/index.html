@@ -11,29 +11,20 @@
 <body>
     <div class="app">
         <h1 id="counterValue">0</h1>
-        <button id="subtract5">-5</button>
-        <button id="decrement">-1</button>
-        <button id="increment">+1</button>
-        <button id="add5">+5</button>
-    </div>
-    <br>
-    <div>
-        <label for="colors">Choose a color:</label>
 
         <select id="colors">
-            <option value="black">Black</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
+            <option value="#ff0000">red</option>
+            <option value="#0000ff">blue</option>
+            <option value="#00ff00">green</option>
+            <option value="#aa0088">purple</option>
         </select>
-    </div>
-    <br>
-    <div>
-        <label for="numberChange">Change the Value To:</label>
-    </div>
-    <div>
-        <textarea id="textArea" rows="4" cols="50">
-</textarea>
+
+        <button id="decrement5">-5</button>
+        <button id="decrement">-1</button>
+        <button id="increment">+1</button>
+        <button id="increment5">+5</button>
+
+        <input type="number" id="whateverIWant">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
