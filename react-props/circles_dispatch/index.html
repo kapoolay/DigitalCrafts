@@ -9,16 +9,18 @@
         crossorigin="anonymous">
 </head>
 <body>
-    <form id="nameForm">
-        <input id="name" type="text" name="name" placeholder="Enter a name" />
-    </form>
-    <div id="nameTagsContainer">
-    
+    <div id="circlesContainer">
+
     </div>
+    <button id="addCircle">Add random circle</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="reducer.js"></script>
-    <script src="render.js"></script>
-    <script src="index.js"></script>
+    <script src="App.js" type="text/babel"></script>
+    <script src="Circle.js" type="text/babel"></script>
+    <script src="index.js" type="text/babel"></script>
 </body>
 </html>
