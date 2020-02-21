@@ -10,5 +10,12 @@ const Circle = props => {
     borderRadius: circle.radius
   };
 
-  return <div style={circleStyle} />
+  let handleClick = () => {
+    reduxStore.dispatch({
+      type: "REMOVE_CIRCLE",
+      ID: uniqueId
+    })
+  }
+
+  return <div style={circleStyle} onClick={handleClick} />
 };
