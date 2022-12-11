@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "crypto": "^1.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pbkdf2": "^3.0.17",
     "pg": "^7.15.1",
     "pg-hstore": "^2.3.3",
